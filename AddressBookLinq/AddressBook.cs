@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Text;
 
 namespace AddressBookLinq
@@ -55,6 +56,17 @@ namespace AddressBookLinq
             dataTable.Rows.Add(dr);
 
             DisplayDataTable();
+        }
+
+        public static void EditContactsByName()
+        {
+
+            DataRow row = dataTable.AsEnumerable().Where(x => x.Field<string>("FirstName").Equals("Tanmay")).FirstOrDefault();
+
+            row["City"] = "Howrah";
+
+            DisplayDataTable();
+
         }
     }
 }
