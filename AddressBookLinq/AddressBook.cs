@@ -39,5 +39,22 @@ namespace AddressBookLinq
                 Console.WriteLine("FirstName: " + row.Field<string>("FirstName") + ", LastName: " + row.Field<string>("LastName") + ", Address: " + row.Field<string>("Address") + " , City: " + row.Field<string>("City") + " , State: " + row.Field<string>("State") + ", Zip: " + row.Field<int>("Zip") + " , PhoneNumber: " + row.Field<string>("PhoneNumber") + ", EmailID: " + row.Field<string>("EmailID"));
             }
         }
+
+        public static void InsertColumnIntoTable()
+        {
+            DataRow dr = dataTable.NewRow();
+            dr[0] = "Kapil";
+            dr[1] = "Sharma";
+            dr[2] = "Punjab";
+            dr[3] = "Jalandhar";
+            dr[4] = "Pun";
+            dr[5] = 968450;
+            dr[6] = "854621";
+            dr[7] = "kapil@gmail.com";
+
+            dataTable.Rows.Add(dr);
+
+            DisplayDataTable();
+        }
     }
 }

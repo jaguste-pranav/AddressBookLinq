@@ -11,6 +11,10 @@ namespace AddressBookLinq
             Console.WriteLine();
             Console.WriteLine("UC2 Created DataTable for AddressBook");
             AddressBook.CreateTable();
+
+            Console.WriteLine();
+            Console.WriteLine("UC3 Insert Row into DataTable AddressBook");
+            AddressBook.InsertColumnIntoTable();
         }
     }
 }
