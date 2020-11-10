@@ -68,5 +68,21 @@ namespace AddressBookLinq
             DisplayDataTable();
 
         }
+
+        public static void DeleteContact(string name)
+        {
+            name = name.ToLower();
+            var deleteRow = dataTable.AsEnumerable().Where(a => a.Field<string>("FirstName").Equals(name)).FirstOrDefault();
+            if (deleteRow != null)
+            {
+                deleteRow.Delete();
+                Console.WriteLine("Contact deleted successfully");
+            }
+            else
+            {
+                Console.WriteLine("No record found");
+            }
+            DisplayDataTable();
+        }
     }
 }
