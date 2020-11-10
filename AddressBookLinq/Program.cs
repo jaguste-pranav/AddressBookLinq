@@ -40,6 +40,14 @@ namespace AddressBookLinq
             Console.WriteLine("UC8 Sort city alphabetically from DataTable AddressBook");
             string cityForSort = Console.ReadLine();
             AddressBook.SortContactAlphabetically(cityForSort);
+
+            Console.WriteLine();
+            Console.WriteLine("UC9 Add address book name and type of contact from DataTable AddressBook");
+            AddressBook.DisplayDataTable();
+
+            Console.WriteLine();
+            Console.WriteLine("UC10 Get count by Type in DataTable AddressBook");
+            AddressBook.GetCountByType();
         }
     }
 }
