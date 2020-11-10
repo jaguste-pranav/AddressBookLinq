@@ -147,6 +147,20 @@ namespace AddressBookLinq
             }
         }
 
-        
+        public static void GetCountByType()
+        {
+            var countByType = from row in dataTable.AsEnumerable()
+                              where row.Field<string>("ContactType") == "Professional"
+                              orderby row.Field<string>("ContactType")
+                              select row;
+            foreach (DataRow row in countByType)
+            {
+                foreach (DataColumn col in dataTable.Columns)
+                {
+                    Console.Write(row[col] + "\t");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
