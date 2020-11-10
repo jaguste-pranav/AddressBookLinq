@@ -24,6 +24,13 @@ namespace AddressBookLinq
             Console.WriteLine("UC5 Delete Record By Name into DataTable AddressBook");
             string name = Console.ReadLine();
             AddressBook.DeleteContact(name);
+
+            Console.WriteLine();
+            Console.WriteLine("UC6 Retrieve Record By Name into DataTable AddressBook");
+            string city = Console.ReadLine();
+            string state = Console.ReadLine();
+            AddressBook.RetrieveContactAccordingToCity(city);
+            AddressBook.RetrieveContactAccordingToState(state);
         }
     }
 }

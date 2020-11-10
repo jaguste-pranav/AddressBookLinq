@@ -84,5 +84,31 @@ namespace AddressBookLinq
             }
             DisplayDataTable();
         }
+
+        public static void RetrieveContactAccordingToCity(string city)
+        {
+            var cityResults = dataTable.AsEnumerable().Where(dr => dr.Field<string>("City") == city);
+            foreach (DataRow row in cityResults)
+            {
+                foreach (DataColumn col in dataTable.Columns)
+                {
+                    Console.Write(row[col] + "\t");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void RetrieveContactAccordingToState(string state)
+        {
+            var stateResults = dataTable.AsEnumerable().Where(dr => dr.Field<string>("State") == state);
+            foreach (DataRow row in stateResults)
+            {
+                foreach (DataColumn col in dataTable.Columns)
+                {
+                    Console.Write(row[col] + "\t");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
