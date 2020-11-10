@@ -35,6 +35,11 @@ namespace AddressBookLinq
             Console.WriteLine();
             Console.WriteLine("UC7 Get count of city and state from DataTable AddressBook");
             AddressBook.GetCountByCityState();
+
+            Console.WriteLine();
+            Console.WriteLine("UC8 Sort city alphabetically from DataTable AddressBook");
+            string cityForSort = Console.ReadLine();
+            AddressBook.SortContactAlphabetically(cityForSort);
         }
     }
 }
