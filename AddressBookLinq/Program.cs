@@ -31,6 +31,10 @@ namespace AddressBookLinq
             string state = Console.ReadLine();
             AddressBook.RetrieveContactAccordingToCity(city);
             AddressBook.RetrieveContactAccordingToState(state);
+
+            Console.WriteLine();
+            Console.WriteLine("UC7 Get count of city and state from DataTable AddressBook");
+            AddressBook.GetCountByCityState();
         }
     }
 }

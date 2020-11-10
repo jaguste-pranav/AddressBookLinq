@@ -110,5 +110,21 @@ namespace AddressBookLinq
                 Console.WriteLine();
             }
         }
+
+        public static void GetCountByCityState()
+        {
+            var countByCityAndState = from row in dataTable.AsEnumerable()
+                                      group row by new { City = row.Field<string>("City"), State = row.Field<string>("State") } into grp
+                                      select new
+                                      {
+                                          City = grp.Key.City,
+                                          State = grp.Key.State,
+                                          Count = grp.Count()
+                                      };
+            foreach (var row in countByCityAndState)
+            {
+                Console.WriteLine(row.City + "\t" + row.State + "\t" + row.Count);
+            }
+        }
     }
 }
